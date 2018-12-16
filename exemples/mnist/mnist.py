@@ -1,3 +1,4 @@
+import os
 import numpy as np
 
 from keras.models import Sequential
@@ -46,6 +47,9 @@ def build_model():
 
 def load_production_model():
     model = build_model()
-    model.load_weights('weights.hdf5')
+
+    weights_filepath = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'weights.hdf5')
+
+    model.load_weights(weights_filepath)
     
     return model
