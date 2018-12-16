@@ -29,17 +29,14 @@ def mnist_predict():
 
             image = image.resize((28, 28))
             image = keras.preprocessing.image.img_to_array(image)
-
-            print(image.shape)
-
-            # image = np.expand_dims(image, axis=3)
+            image = np.expand_dims(image, axis=0)
 
             with open('model.json', 'r') as f:
                 model_json = f.read()
 
             model = keras.models.model_from_json(model_json)
 
-            model.load_weights('model.hdf5')
+            model.load_weights('weights_mnist.hdf5')
             model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 
             data['metrics'] = model.predict(image)
