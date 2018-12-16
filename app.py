@@ -1,10 +1,10 @@
 import io
 import numpy as np
 import flask
-import keras
 
 from decouple import config
 from PIL import Image
+from exemples.mnist import mnist
 
 
 DEBUG = config('DEBUG', default=False)
@@ -23,23 +23,13 @@ def mnist_predict():
         if flask.request.files.get('image'):
             image = flask.request.files['image'].read()
             image = Image.open(io.BytesIO(image))
+            image = mnist.prepare_image(image)
+
+            model = mnist.load_production_model()
+            preds = model.predict(image)
             
-            if image.mode != 'L':
-                image = image.convert('L')
-
-            image = image.resize((28, 28))
-            image = keras.preprocessing.image.img_to_array(image)
-            image = np.expand_dims(image, axis=0)
-
-            with open('model.json', 'r') as f:
-                model_json = f.read()
-
-            model = keras.models.model_from_json(model_json)
-
-            model.load_weights('weights_mnist.hdf5')
-            model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
-
-            data['metrics'] = model.predict(image).tolist()
+            data['predictions'] = mnist.decode_predictions(preds[0])
+            data['success'] = True
 
     return flask.jsonify(data)
 
