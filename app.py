@@ -39,7 +39,7 @@ def mnist_predict():
             model.load_weights('weights_mnist.hdf5')
             model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 
-            data['metrics'] = model.predict(image).to_list()
+            data['metrics'] = model.predict(image).tolist()
 
     return flask.jsonify(data)
 
