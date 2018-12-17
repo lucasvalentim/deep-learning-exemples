@@ -1,5 +1,5 @@
 $(function() {
-    $("#mnistForm").on('submit', function(event) {
+    $("#mnist form").on('submit', function(event) {
         event.preventDefault();
         
         var formData = new FormData(this);

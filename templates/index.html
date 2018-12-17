@@ -1,40 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Deep Learning Exemples</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
     <link rel="stylesheet" href="/static/css/styles.css">
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">Deep Learning Exemples</a>
+    <header id="header">
+        <h1 class="title is-1 has-text-centered is-uppercase">Deep Learning Exemples</h1>        
+        <h2 class="subtitle has-text-centered is-uppercase has-text-weight-light">Alguns exemplos de problemas resolvidos com diferentes abordagens de Deep Learning</h2>
+    </header>
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-            </div>
+    <div class="container">
+        <div class="tabs is-centered">
+            <ul>
+                <li class="is-active"><a>Mnist</a></li>
+                <li><a>Gato vs Cachorro</a></li>
+                <li><a>Detector de Pneumonia</a></li>
+                <li><a>Análise de Sentimentos</a></li>
+            </ul>
         </div>
-    </nav>
 
-    <div class="container mt-5">
-        <form id="mnistForm" action="" method="POST" enctype="multipart/form-data">
-            <input type="file" id="image" class="form-control-file" name="image" accept="image/png, image/jpeg">
-            <button class="btn btn-primary mt-3">Enviar</button>
-        </form>
+        <section id="mnist">
+            <form enctype="multipart/form-data">
+                <input type="file" id="inputImage" class="form-control-file" name="image" accept="image/*">
+                <button type="submit" class="button is-link">Enviar</button>
+            </form>
+        </section>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <script src="/static/js/app.js"></script>
 
 </body>
