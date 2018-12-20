@@ -5,3 +5,18 @@
 #header .subtitle {
     margin-top: -1rem;
 }
+
+#inputImage {
+    margin: 0 auto;
+}
+
+#mnist .input-image {
+    margin: 0 auto;
+    display: table;
+}
+
+#mnist .image-preview-wrapper {
+    width: 420px;
+    margin: 30px auto;
+    display: none;
+}

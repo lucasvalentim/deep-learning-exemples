@@ -27,15 +27,15 @@
         </div>
 
         <section id="mnist">
-            <form enctype="multipart/form-data">
-                <input type="file" id="inputImage" class="form-control-file" name="image" accept="image/*">
-                <button type="submit" class="button is-link">Enviar</button>
-            </form>
+            <input type="file" class="input-image" name="image" accept="image/*">
+
+            <figure class="image image-preview-wrapper">
+                <img class="image-preview" src="" />
+            </figure>
         </section>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <script src="/static/js/app.js"></script>
 
 </body>
