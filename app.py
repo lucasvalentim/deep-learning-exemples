@@ -13,7 +13,19 @@ app = flask.Flask(__name__)
 
 @app.route('/')
 def index():
-    return flask.render_template('index.html')
+    return flask.render_template('mnist.html')
+
+@app.route('/cat-vs-dog')
+def cat_vs_dog():
+    return flask.render_template('cat-vs-dog.html')
+
+@app.route('/pneumonia-detector')
+def pneumonia_detector():
+    return flask.render_template('pneumonia-detector.html')
+
+@app.route('/sentiment-analysis')
+def sentiment_analysis():
+    return flask.render_template('sentiment-analysis.html')
 
 @app.route('/api/mnist/predict', methods=['POST'])
 def mnist_predict():
@@ -28,7 +40,7 @@ def mnist_predict():
             model = mnist.load_production_model()
             preds = model.predict(image)
             
-            data['predictions'] = mnist.decode_predictions(preds[0])
+            data['prediction'] = mnist.decode_predictions(preds[0])
             data['success'] = True
 
     return flask.jsonify(data)

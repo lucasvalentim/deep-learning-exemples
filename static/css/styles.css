@@ -6,17 +6,23 @@
     margin-top: -1rem;
 }
 
-#inputImage {
-    margin: 0 auto;
-}
-
 #mnist .input-image {
     margin: 0 auto;
     display: table;
 }
 
-#mnist .image-preview-wrapper {
+#mnist .image-preview {
     width: 420px;
     margin: 30px auto;
+    display: none;
+}
+
+#mnist .result {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 5px;
+    background: #f1f1f1;
+    text-align: center;
     display: none;
 }

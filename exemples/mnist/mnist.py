@@ -19,7 +19,10 @@ def prepare_image(image):
     return image
 
 def decode_predictions(preds):
-    return [{'label': str(label), 'probability': float(prob)} for label, prob in enumerate(preds)]
+    return {
+        'label': str(np.argmax(preds)),
+        'probability': float(np.max(preds))
+    }
 
 def build_model():
     model = Sequential()

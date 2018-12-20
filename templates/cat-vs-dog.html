@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Deep Learning Exemples</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+
+<body>
+
+    <header id="header">
+        <h1 class="title is-1 has-text-centered is-uppercase">Deep Learning Exemples</h1>        
+        <h2 class="subtitle has-text-centered is-uppercase has-text-weight-light">Alguns exemplos de problemas resolvidos com diferentes abordagens de Deep Learning</h2>
+    </header>
+
+    <div class="container">
+        <div class="tabs is-centered">
+            <ul>
+                <li><a href="/">Mnist</a></li>
+                <li class="is-active"><a href="/cat-vs-dog">Gato vs Cachorro</a></li>
+                <li><a href="/pneumonia-detector">Detector de Pneumonia</a></li>
+                <li><a href="/sentiment-analysis">Análise de Sentimentos</a></li>
+            </ul>
+        </div>
+
+        <section id="catVsDog">
+            <input type="file" class="input-image" name="image" accept="image/*">
+            <img class="image-preview" src="" />
+            <div class="result">
+                <p class="is-uppercase"></p>
+                <p class="number-predict is-size-1 has-text-weight-bold"></p>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="/static/js/app.js"></script>
+
+</body>
+</html>

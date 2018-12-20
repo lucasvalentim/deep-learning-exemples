@@ -9,7 +9,7 @@ $(function() {
 
             reader.readAsDataURL(this.files[0]);
 
-            $('.image-preview-wrapper').show();
+            $('#mnist .image-preview').show();
 
             var formData = new FormData();
 
@@ -20,7 +20,8 @@ $(function() {
                 type: 'POST',
                 data: formData,
                 success: function(data) {
-                    console.log(data)
+                    $('#mnist .result .number-predicted').text(data.prediction.label);
+                    $('#mnist .result').show();
                 },
                 cache: false,
                 contentType: false,

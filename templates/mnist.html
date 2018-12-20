@@ -19,19 +19,20 @@
     <div class="container">
         <div class="tabs is-centered">
             <ul>
-                <li class="is-active"><a>Mnist</a></li>
-                <li><a>Gato vs Cachorro</a></li>
-                <li><a>Detector de Pneumonia</a></li>
-                <li><a>Análise de Sentimentos</a></li>
+                <li class="is-active"><a href="/">Mnist</a></li>
+                <li><a href="/cat-vs-dog">Gato vs Cachorro</a></li>
+                <li><a href="/pneumonia-detector">Detector de Pneumonia</a></li>
+                <li><a href="/sentiment-analysis">Análise de Sentimentos</a></li>
             </ul>
         </div>
 
         <section id="mnist">
             <input type="file" class="input-image" name="image" accept="image/*">
-
-            <figure class="image image-preview-wrapper">
-                <img class="image-preview" src="" />
-            </figure>
+            <img class="image-preview" src="" />
+            <div class="result">
+                <p class="is-uppercase">Número contido na imagem:</p>
+                <p class="number-predicted is-size-1 has-text-weight-bold"></p>
+            </div>
         </section>
     </div>
 
